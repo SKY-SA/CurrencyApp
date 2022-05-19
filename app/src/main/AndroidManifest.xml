@@ -14,10 +14,10 @@
         android:theme="@style/Theme.CurrencyApp"
         tools:targetApi="31">
         <activity
-            android:name=".ConvertActivity"
+            android:name=".view.ConvertActivity"
             android:exported="false" />
         <activity
-            android:name=".FavoitesActivity"
+            android:name=".view.FavoritesActivity"
             android:exported="false" />
         <activity
             android:name=".view.CurrenciesActivity"

@@ -50,7 +50,6 @@ class CurrenciesActivity : AppCompatActivity() {
                 currenciesActivity_recyclerView.visibility = View.VISIBLE
 
                 for (currency in it) {
-                    println("base currencyName is ${baseCurrencyName} and item name ${currency.code}")
                     if (baseCurrencyName == currency.code) {
                         baseCurrency = currency
                         break
@@ -73,6 +72,7 @@ class CurrenciesActivity : AppCompatActivity() {
     fun onCheckBoxClicked(view: View) {
 
         if (currenciesActivity_checkboxFavorite.isChecked) {
+
             baseCurrency.let {
                 it.isFavorite = true
                 Toast.makeText(this, "Base Currency favorilere eklendi", Toast.LENGTH_SHORT).show()
@@ -90,9 +90,17 @@ class CurrenciesActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val intent = Intent()
+
         when(item.itemId){
             R.id.currenciesMenu_favorite ->{
+                val list = recyclerAdapter.getFavoriteCurrencyName()
+                val arrayList = ArrayList<String?>()
+                arrayList.addAll(list)
+
+                val intent = Intent(this, FavoritesActivity::class.java)
+                intent.putStringArrayListExtra("list", arrayList)
+                intent.putExtra("baseCurrency", baseCurrencyName)
+                startActivity(intent)
             }
             R.id.currenciesMenu_convert ->{
 

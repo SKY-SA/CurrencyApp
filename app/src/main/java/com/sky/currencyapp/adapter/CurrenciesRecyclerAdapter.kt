@@ -37,7 +37,7 @@ class CurrenciesRecyclerAdapter(private val listCurrency: ArrayList<CurrencyDeta
             if (holder.itemView.currenciesRecyclerRow_checkboxFavorite.isChecked) {
 
                 listCurrency[position].isFavorite = true
-                listFavoriteCurrencyName.add(listCurrency[position].name)
+                listFavoriteCurrencyName.add(listCurrency[position].code)
                 Toast.makeText(it.context, "Favorilendi", Toast.LENGTH_SHORT).show()
             } else {
                 listCurrency[position].isFavorite = false

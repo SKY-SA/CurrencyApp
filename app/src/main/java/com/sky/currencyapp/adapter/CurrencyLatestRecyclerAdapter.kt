@@ -24,18 +24,6 @@ class CurrencyLatestRecyclerAdapter(val listCurrency : ArrayList<CurrencyLatest>
     override fun onBindViewHolder(holder: CurrencyVH, position: Int) {
         holder.itemView.latestRecyclerRow_textView.text = listCurrency[position].fullName
         holder.itemView.latestRecyclerRow_radioButton.text = listCurrency[position].name!!.uppercase()
-
-        /*holder.itemView.latestRecyclerRow_radioButton.setOnClickListener { view->
-            val nameOfCurrency:String? = listCurrency[position].name
-            nameOfCurrency?.let { name->
-                holder.itemView.latestRecyclerRow_radioButton.context.applicationContext?.let { context->
-                    val intent = Intent(context, CurrenciesActivity::class.java).apply{
-                        this.putExtra("nameOfBaseCurreny",name)
-                    }
-                    context.startActivity(intent)
-                }
-            }
-        }*/
     }
 
     override fun getItemCount(): Int {

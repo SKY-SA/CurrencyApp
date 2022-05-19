@@ -31,11 +31,6 @@ class CurrencyLatestActivity : AppCompatActivity() {
         currencyLatestActivity_recyclerView.adapter = recyclerAdapter
     }
 
-    override fun onCreateView(name: String, context: Context, attrs: AttributeSet): View? {
-        return super.onCreateView(name, context, attrs)
-
-
-    }
     private fun observeLiveData()
     {
         viewModel.currencies.observe(this, Observer{ currency->
@@ -76,17 +71,6 @@ class CurrencyLatestActivity : AppCompatActivity() {
     fun onRadioButtonClicked(view: View){
         val intent = Intent(this, CurrenciesActivity::class.java)
         startActivity(intent)
-       /*if(view is RadioGroup)
-       {
-           val checked = view.isActivated
-           when(view.getId()){
-               R.id.latestRecyclerRow_radioButton ->
-                   if(checked){
-                       val intent = Intent(this, CurrenciesActivity::class.java)
-                       startActivity(intent)
-                   }
-           }
-
-       }*/
+        finish()
     }
 }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+
+    android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+
+        android:id="@+id/favoritesRecyclerRow_currencyNameTxt"
+        android:layout_weight="3"
+        android:layoutDirection="ltr"
+        android:paddingTop="11dp"
+        android:paddingStart="4dp"
+        android:text="Currency Name"
+        android:textSize="16sp"
+
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/favoriteRecyclerRow_currencyCodeTxt"
+        android:layout_weight="1"
+        android:gravity="center"
+
+        android:text="Code"
+        android:textSize="15sp"
+        ></TextView>
+
+</LinearLayout>

@@ -64,8 +64,7 @@ class CurrenciesActivity : AppCompatActivity() {
                 currenciesActivity_currencyCodeTextView.text = baseCurrency.code
                 currenciesActivity_decimalUnitTextView.text = baseCurrency.decimalUnits
                 currenciesActivity_checkboxFavorite.isChecked = true
-                //currenciesActivity_checkboxFavorite.isSelected = false
-
+                currenciesActivity_checkboxFavorite.isClickable = false
 
                 recyclerAdapter.refreshData(listCurrency)
             }

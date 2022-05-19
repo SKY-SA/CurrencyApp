@@ -5,14 +5,12 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.RecyclerView
 import com.sky.currencyapp.R
 import com.sky.currencyapp.model.CurrencyLatest
 import com.sky.currencyapp.view.CurrenciesActivity
 import com.sky.currencyapp.view.CurrencyLatestActivity
 import kotlinx.android.synthetic.main.latest_activity_recycler_row.view.*
-import java.lang.NullPointerException
 
 class CurrencyLatestRecyclerAdapter(private val listCurrency : ArrayList<CurrencyLatest>,private val context :Context): RecyclerView.Adapter<CurrencyLatestRecyclerAdapter.CurrencyVH>() {
     class CurrencyVH(itemView: View): RecyclerView.ViewHolder(itemView) {
@@ -31,10 +29,10 @@ class CurrencyLatestRecyclerAdapter(private val listCurrency : ArrayList<Currenc
 
     override fun onBindViewHolder(holder: CurrencyVH, position: Int) {
         holder.itemView.latestRecyclerRow_textView.text = listCurrency[position].fullName
-        holder.itemView.latestRecyclerRow_radioButton.text = listCurrency[position].name!!.uppercase()
+        holder.itemView.latestRecyclerRow_radioButton.text = listCurrency[position].code!!.uppercase()
 
         holder.itemView.latestRecyclerRow_radioButton.setOnClickListener { view->
-            chosenCurrencyName = listCurrency[position].name
+            chosenCurrencyName = listCurrency[position].code
                 val intent = Intent(context, CurrenciesActivity::class.java).apply {
                     this.putExtra("nameBaseCurrency", chosenCurrencyName)
                 }

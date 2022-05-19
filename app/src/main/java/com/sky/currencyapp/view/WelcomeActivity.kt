@@ -20,7 +20,7 @@ class WelcomeActivity : AppCompatActivity() {
 
         runnable = Runnable {
             numara += 1
-            handler.postDelayed(runnable,1000)
+            handler.postDelayed(runnable,10)
 
             if(numara == 1){
                 val intent = Intent(applicationContext,CurrencyLatestActivity::class.java)

@@ -34,15 +34,19 @@ class CurrenciesRecyclerAdapter(private val listCurrency: ArrayList<CurrencyDeta
 
 
         holder.itemView.currenciesRecyclerRow_checkboxFavorite.setOnClickListener {
-            if (holder.itemView.currenciesRecyclerRow_checkboxFavorite.isChecked) {
+            if (holder.itemView.currenciesRecyclerRow_checkboxFavorite.isChecked)
+            {
                 var isExist: Boolean = false
                 listCurrency[position].isFavorite = true
                 isExist = listFavCurCode.contains(listCurrency[position].code)
-                if (!isExist) {
+                if (!isExist)
+                {
                     listFavCurCode.add(listCurrency[position].code)
                 }
                 Toast.makeText(it.context, "Favorilendi", Toast.LENGTH_SHORT).show()
-            } else {
+            }
+            else
+            {
                 listCurrency[position].isFavorite = false
                 var index: Int = 0
                 index = listFavCurCode.indexOf(listCurrency[position].code)
@@ -50,7 +54,8 @@ class CurrenciesRecyclerAdapter(private val listCurrency: ArrayList<CurrencyDeta
                 if(index == -1){
                     // there isn't item in listFavoriteCurrency
                 }
-                else{
+                else
+                {
 
                     listFavCurCode.removeAt(index)
                 }

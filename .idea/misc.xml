@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/SKY/AndroidStudioProjects/CurrencyApp/app/src/main/res/layout/activity_currencies.xml" value="0.24592391304347827" />
+        <entry key="..\:/Users/SKY/AndroidStudioProjects/CurrencyApp/app/src/main/res/layout/activity_currency_latest.xml" value="0.33" />
+        <entry key="..\:/Users/SKY/AndroidStudioProjects/CurrencyApp/app/src/main/res/layout/activity_welcome.xml" value="0.18009118541033434" />
+        <entry key="..\:/Users/SKY/AndroidStudioProjects/CurrencyApp/app/src/main/res/layout/latest_activity_recycler_row.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

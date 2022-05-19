@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_weight="5"
+            android:id="@+id/latestRecyclerRow_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deneme"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            android:layoutDirection="ltr"
+            android:padding="2dp"
+            android:layout_margin="2dp"
+            />
+        <RadioButton
+            android:layout_weight="2"
+            android:id="@+id/latestRecyclerRow_radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="Currency Text"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:buttonTint="#173A04"
+            android:textColor="#355698"
+            android:layoutDirection="rtl"
+            android:padding="6dp"
+            android:layout_margin="3dp"
+            />
+    </LinearLayout>
+</layout>

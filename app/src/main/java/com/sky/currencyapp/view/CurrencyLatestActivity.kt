@@ -1,10 +1,12 @@
 package com.sky.currencyapp.view
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.AttributeSet
 import android.view.View
+import android.widget.RadioGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -69,5 +71,22 @@ class CurrencyLatestActivity : AppCompatActivity() {
                 }
             }
         })
+    }
+
+    fun onRadioButtonClicked(view: View){
+        val intent = Intent(this, CurrenciesActivity::class.java)
+        startActivity(intent)
+       /*if(view is RadioGroup)
+       {
+           val checked = view.isActivated
+           when(view.getId()){
+               R.id.latestRecyclerRow_radioButton ->
+                   if(checked){
+                       val intent = Intent(this, CurrenciesActivity::class.java)
+                       startActivity(intent)
+                   }
+           }
+
+       }*/
     }
 }

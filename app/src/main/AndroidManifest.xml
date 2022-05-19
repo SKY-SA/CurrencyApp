@@ -14,7 +14,7 @@
         android:theme="@style/Theme.CurrencyApp"
         tools:targetApi="31">
         <activity
-            android:name=".CurrenciesActivity"
+            android:name=".view.CurrenciesActivity"
             android:exported="false" />
         <activity
             android:name=".view.CurrencyLatestActivity"

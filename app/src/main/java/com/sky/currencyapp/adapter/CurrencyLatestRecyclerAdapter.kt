@@ -25,7 +25,7 @@ class CurrencyLatestRecyclerAdapter(val listCurrency : ArrayList<CurrencyLatest>
         holder.itemView.latestRecyclerRow_textView.text = listCurrency[position].fullName
         holder.itemView.latestRecyclerRow_radioButton.text = listCurrency[position].name!!.uppercase()
 
-        holder.itemView.latestRecyclerRow_radioButton.setOnClickListener { view->
+        /*holder.itemView.latestRecyclerRow_radioButton.setOnClickListener { view->
             val nameOfCurrency:String? = listCurrency[position].name
             nameOfCurrency?.let { name->
                 holder.itemView.latestRecyclerRow_radioButton.context.applicationContext?.let { context->
@@ -35,7 +35,7 @@ class CurrencyLatestRecyclerAdapter(val listCurrency : ArrayList<CurrencyLatest>
                     context.startActivity(intent)
                 }
             }
-        }
+        }*/
     }
 
     override fun getItemCount(): Int {

@@ -8,13 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sky.currencyapp.R
 import com.sky.currencyapp.model.CurrencyDetails
 import kotlinx.android.synthetic.main.currencies_activity_recycler_row.view.*
-import java.util.*
 import kotlin.collections.ArrayList
 
 class CurrenciesRecyclerAdapter(private val listCurrency: ArrayList<CurrencyDetails>) : RecyclerView.Adapter<CurrenciesRecyclerAdapter.CurrenciesHolder>() {
     class CurrenciesHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     }
+
+    private val listFavoriteCurrencyName =  ArrayList<String?>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CurrenciesHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -34,7 +35,9 @@ class CurrenciesRecyclerAdapter(private val listCurrency: ArrayList<CurrencyDeta
 
         holder.itemView.currenciesRecyclerRow_checkboxFavorite.setOnClickListener {
             if (holder.itemView.currenciesRecyclerRow_checkboxFavorite.isChecked) {
+
                 listCurrency[position].isFavorite = true
+                listFavoriteCurrencyName.add(listCurrency[position].name)
                 Toast.makeText(it.context, "Favorilendi", Toast.LENGTH_SHORT).show()
             } else {
                 listCurrency[position].isFavorite = false
@@ -53,5 +56,7 @@ class CurrenciesRecyclerAdapter(private val listCurrency: ArrayList<CurrencyDeta
         listCurrency.addAll(newCurrency)
         notifyDataSetChanged()
     }
-
+    fun getFavoriteCurrencyName() : List<String?>{
+        return listFavoriteCurrencyName
+    }
 }

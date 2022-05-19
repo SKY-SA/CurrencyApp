@@ -1,8 +1,10 @@
 package com.sky.currencyapp.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
@@ -22,6 +24,8 @@ class CurrenciesActivity : AppCompatActivity() {
     private val recyclerAdapter = CurrenciesRecyclerAdapter(arrayListOf())
     private var baseCurrencyName: String? = ""
     private lateinit var baseCurrency: CurrencyDetails
+    private val listCurrency = ArrayList<CurrencyDetails>()
+    private val listFavoriteCurrencyName = ArrayList<String>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_currencies)
@@ -54,14 +58,12 @@ class CurrenciesActivity : AppCompatActivity() {
                     index++
                 }
 
-                val listCurrency = ArrayList<CurrencyDetails>()
+
                 listCurrency.addAll(it)
                 listCurrency.removeAt(index)
-
                 currenciesActivity_currencyNameTextView.text = baseCurrency.name
                 currenciesActivity_currencyCodeTextView.text = baseCurrency.code
                 currenciesActivity_decimalUnitTextView.text = baseCurrency.decimalUnits
-
 
                 recyclerAdapter.refreshData(listCurrency)
             }
@@ -85,5 +87,18 @@ class CurrenciesActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.currencies_menu, menu)
         return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val intent = Intent()
+        when(item.itemId){
+            R.id.currenciesMenu_favorite ->{
+            }
+            R.id.currenciesMenu_convert ->{
+
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 }

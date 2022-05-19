@@ -2,6 +2,7 @@ package com.sky.currencyapp.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
@@ -79,5 +80,10 @@ class CurrenciesActivity : AppCompatActivity() {
                 it.isFavorite = false
             }
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.currencies_menu, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 }

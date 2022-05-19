@@ -3,8 +3,6 @@ package com.sky.currencyapp.view
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.AttributeSet
-import android.view.View
 import com.sky.currencyapp.R
 
 private var listFavoriteCurrencyNane = ArrayList<String?>()
@@ -22,6 +20,11 @@ class FavoritesActivity : AppCompatActivity() {
         for(p in listFavoriteCurrencyNane){
             println("Favorites içerisi ${p}")
         }
+    }
+
+    override fun onBackPressed() {
+        finish()
+        super.onBackPressed()
     }
 
 }

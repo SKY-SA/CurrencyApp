@@ -63,6 +63,9 @@ class CurrenciesActivity : AppCompatActivity() {
                 currenciesActivity_currencyNameTextView.text = baseCurrency.name
                 currenciesActivity_currencyCodeTextView.text = baseCurrency.code
                 currenciesActivity_decimalUnitTextView.text = baseCurrency.decimalUnits
+                currenciesActivity_checkboxFavorite.isChecked = true
+                //currenciesActivity_checkboxFavorite.isSelected = false
+
 
                 recyclerAdapter.refreshData(listCurrency)
             }
@@ -93,8 +96,10 @@ class CurrenciesActivity : AppCompatActivity() {
 
         when(item.itemId){
             R.id.currenciesMenu_favorite ->{
-                val list = recyclerAdapter.getFavoriteCurrencyName()
+                val list : List<String?> = recyclerAdapter.getFavoriteCurrencyName()
+
                 val arrayList = ArrayList<String?>()
+                arrayList.clear()
                 arrayList.addAll(list)
 
                 val intent = Intent(this, FavoritesActivity::class.java)
@@ -103,7 +108,8 @@ class CurrenciesActivity : AppCompatActivity() {
                 startActivity(intent)
             }
             R.id.currenciesMenu_convert ->{
-
+                val intent = Intent(this, ConvertActivity::class.java)
+                startActivity(intent)
             }
         }
 

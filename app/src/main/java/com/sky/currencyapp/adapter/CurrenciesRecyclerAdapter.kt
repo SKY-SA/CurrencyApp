@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.currencies_activity_recycler_row.view.*
 import java.util.*
 import kotlin.collections.ArrayList
 
-class CurrenciesRecyclerAdapter(val listCurrency: ArrayList<CurrencyDetails>, private val baseCurrencyName:String?) : RecyclerView.Adapter<CurrenciesRecyclerAdapter.CurrenciesHolder>() {
+class CurrenciesRecyclerAdapter(private val listCurrency: ArrayList<CurrencyDetails>) : RecyclerView.Adapter<CurrenciesRecyclerAdapter.CurrenciesHolder>() {
     class CurrenciesHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     }
@@ -23,12 +23,14 @@ class CurrenciesRecyclerAdapter(val listCurrency: ArrayList<CurrencyDetails>, pr
     }
 
     override fun onBindViewHolder(holder: CurrenciesHolder, position: Int) {
-        holder.itemView.currenciesRecyclerRow_currencyNameTextView.text =
-            listCurrency[position].name
-        holder.itemView.currenciesRecyclerRow_currencyCodetextView.text =
-            listCurrency[position].code
-        holder.itemView.currenciesRecyclerRow_decimalUnitiestextView.text =
-            listCurrency[position].decimalUnits
+
+            holder.itemView.currenciesRecyclerRow_currencyNameTextView.text =
+                listCurrency[position].name
+            holder.itemView.currenciesRecyclerRow_currencyCodeTextView.text =
+                listCurrency[position].code
+            holder.itemView.currenciesRecyclerRow_decimalUnitTextView.text =
+                listCurrency[position].decimalUnits
+
 
         holder.itemView.currenciesRecyclerRow_checkboxFavorite.setOnClickListener {
             if (holder.itemView.currenciesRecyclerRow_checkboxFavorite.isChecked) {
@@ -36,7 +38,7 @@ class CurrenciesRecyclerAdapter(val listCurrency: ArrayList<CurrencyDetails>, pr
                 Toast.makeText(it.context, "Favorilendi", Toast.LENGTH_SHORT).show()
             } else {
                 listCurrency[position].isFavorite = false
-                Toast.makeText(it.context, "Favorilerden çıkarıldı", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(it.context, "Favorilerden çıkarıldı", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -51,4 +53,5 @@ class CurrenciesRecyclerAdapter(val listCurrency: ArrayList<CurrencyDetails>, pr
         listCurrency.addAll(newCurrency)
         notifyDataSetChanged()
     }
+
 }

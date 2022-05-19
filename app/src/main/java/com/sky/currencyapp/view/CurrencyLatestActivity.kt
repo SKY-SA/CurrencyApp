@@ -10,13 +10,14 @@ import android.widget.RadioGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.sky.currencyapp.R
 import com.sky.currencyapp.adapter.CurrencyLatestRecyclerAdapter
 import com.sky.currencyapp.viewmodel.CurrencyLatestViewModel
 import kotlinx.android.synthetic.main.activity_currency_latest.*
 
 class CurrencyLatestActivity : AppCompatActivity() {
-    private val recyclerAdapter = CurrencyLatestRecyclerAdapter(arrayListOf())
+    private val recyclerAdapter = CurrencyLatestRecyclerAdapter(arrayListOf(), this)
     private lateinit var viewModel: CurrencyLatestViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,10 +68,8 @@ class CurrencyLatestActivity : AppCompatActivity() {
             }
         })
     }
-
-    fun onRadioButtonClicked(view: View){
-        val intent = Intent(this, CurrenciesActivity::class.java)
-        startActivity(intent)
+    public fun finishMe()
+    {
         finish()
     }
 }

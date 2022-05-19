@@ -22,7 +22,7 @@ class WelcomeActivity : AppCompatActivity() {
             numara += 1
             handler.postDelayed(runnable,1000)
 
-            if(numara == 2){
+            if(numara == 1){
                 val intent = Intent(applicationContext,CurrencyLatestActivity::class.java)
                 startActivity(intent)
                 handler.removeCallbacks(runnable)

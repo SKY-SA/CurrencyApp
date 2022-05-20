@@ -5,32 +5,28 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Spinner
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.sky.currencyapp.R
-import com.sky.currencyapp.viewmodel.CurrencyLatestViewModel
+import com.sky.currencyapp.viewmodel.ConvertViewModel
 import com.sky.currencyapp.viewmodel.CurrencyLatestViewModel.Companion.globalList
 import kotlinx.android.synthetic.main.activity_convert.*
-import kotlinx.android.synthetic.main.activity_currencies.view.*
 
 
 class ConvertActivity : AppCompatActivity() {
 
-    private lateinit var viewModel : CurrencyLatestViewModel
+    private lateinit var viewModel : ConvertViewModel
 
     var list = ArrayList<String?>()
-    override fun onCreate(savedInstanceState: Bundle?) {
 
+    var fromCurrency: String? = ""
+    var toCurrency: String? = ""
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_convert)
 
-
-
-
-        var fromCurrency: String? = ""
-        var toCurrency: String? = ""
+        viewModel = ViewModelProvider(this).get(ConvertViewModel::class.java)
 
         list.clear()
         for(item in globalList){
@@ -67,6 +63,9 @@ class ConvertActivity : AppCompatActivity() {
 
         }
 
+
+
+
     }
 
 
@@ -75,10 +74,31 @@ class ConvertActivity : AppCompatActivity() {
         if(!convertActivity_amountEditText.text.isNullOrEmpty()){
             amount = convertActivity_amountEditText.text.toString().toDouble()
             println("Amount tutarı ${amount}")
+
+            viewModel = ViewModelProvider(this).get(ConvertViewModel::class.java)
+            println("Activity Observe Methodu içerisinde ${fromCurrency} ve ${toCurrency}")
+            viewModel.convert(fromCurrency,toCurrency, amount.toInt())
+            observeLiveData()
         }
         else{
-            println("Tutar gelmedi")
+            Toast.makeText(applicationContext, "Değeri Giriniz Lütfen", Toast.LENGTH_SHORT).show()
         }
     }
+    private fun observeLiveData(){
+        viewModel.convertJson.observe(this,Observer{ convertJson->
+            convertJson?.let { convertJsonIt->
+                convertJsonIt.meta?.let { meta->
+                    if(meta.code == 200){
+                        convertJsonIt.convertResponse?.let {
+                            Toast.makeText(applicationContext, "Code is ${meta.code}\n Amount Tutarı ${it.amount} \nValue  Tutarı = ${it.value}", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                    else{
+                        Toast.makeText(applicationContext, "Hata Kodu ${meta.code}", Toast.LENGTH_SHORT).show()
+                    }
+                }
 
+            }
+        })
+    }
 }

@@ -101,7 +101,7 @@ class CurrenciesActivity : AppCompatActivity() {
                 arrayList.clear()
                 arrayList.addAll(list)
 
-                val intent = Intent(this, FavoritesActivity::class.java)
+                val intent = Intent(this, FavoriteCurrenciesActivity::class.java)
                 intent.putStringArrayListExtra("list", arrayList)
                 intent.putExtra("baseCurrency", baseCurrencyName)
                 startActivity(intent)

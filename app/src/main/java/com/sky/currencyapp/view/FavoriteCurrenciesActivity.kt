@@ -9,40 +9,39 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.sky.currencyapp.R
 import com.sky.currencyapp.adapter.FavoriteRecyclerAdapter
 import com.sky.currencyapp.viewmodel.FavoriteViewModel
-import kotlinx.android.synthetic.main.activity_favorites.*
-
-private var listFavoriteCurrencyNane = ArrayList<String?>()
-
-private lateinit var viewModel : FavoriteViewModel
-val recyclerAdapter = FavoriteRecyclerAdapter(arrayListOf())
+import kotlinx.android.synthetic.main.activity_favorite_currencies.*
 
 
-class FavoritesActivity : AppCompatActivity() {
+class FavoriteCurrenciesActivity : AppCompatActivity() {
+
+    private var listFavoriteCurrencyName = ArrayList<String?>()
+    private lateinit var viewModel : FavoriteViewModel
+    val recyclerAdapter = FavoriteRecyclerAdapter(arrayListOf())
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_favorites)
-
+        setContentView(R.layout.activity_favorite_currencies)
 
         intent?.let {
-            listFavoriteCurrencyNane =  it.getStringArrayListExtra("list")!!
-            listFavoriteCurrencyNane.add(it.getStringExtra("baseCurrency"))
+            listFavoriteCurrencyName =  it.getStringArrayListExtra("list")!!
+            listFavoriteCurrencyName.add(it.getStringExtra("baseCurrency"))
 
         }
 
         viewModel = ViewModelProvider(this).get(FavoriteViewModel::class.java)
-        viewModel.getData(listFavoriteCurrencyNane,this,this)
+        viewModel.getData(listFavoriteCurrencyName,this,this)
 
         observeLiveData()
 
-        favoritesActivity_recyclerView.layoutManager = LinearLayoutManager(this)
-        favoritesActivity_recyclerView.adapter = recyclerAdapter
-    }
+        favoriteCurrenciesActivity_recyclerView.layoutManager = LinearLayoutManager(this)
+        favoriteCurrenciesActivity_recyclerView.adapter = recyclerAdapter
 
+    }
     private fun observeLiveData()
     {
         viewModel.currencies.observe(this, Observer {
             it?.let {
-                favoritesActivity_recyclerView.visibility = View.VISIBLE
+                favoriteCurrenciesActivity_recyclerView.visibility = View.VISIBLE
                 recyclerAdapter.refreshData(it)
             }
         })
@@ -51,5 +50,4 @@ class FavoritesActivity : AppCompatActivity() {
         finish()
         super.onBackPressed()
     }
-
 }

@@ -69,7 +69,7 @@
             app:layout_constraintBottom_toTopOf="@+id/convertActivity_ToSpinner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/convertActivity_FromTextView"
-            app:layout_constraintTop_toTopOf="parent"></Spinner>
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <Spinner
             android:id="@+id/convertActivity_ToSpinner"
@@ -80,7 +80,7 @@
             app:layout_constraintBottom_toTopOf="@+id/convertActivity_AmountEditText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/convertActivity_ToTextView"
-            app:layout_constraintTop_toBottomOf="@+id/convertActivity_FromSpinner"></Spinner>
+            app:layout_constraintTop_toBottomOf="@+id/convertActivity_FromSpinner"/>
 
         <EditText
             android:id="@+id/convertActivity_AmountEditText"
@@ -100,12 +100,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="209dp"
-            android:onClick="calcullation"
             android:text="calculation"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/convertActivity_AmountEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/convertActivity_AmountEditText"
+            android:onClick="onConvertButtonClicked"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

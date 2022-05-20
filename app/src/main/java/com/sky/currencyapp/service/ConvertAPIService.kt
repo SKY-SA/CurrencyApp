@@ -22,12 +22,4 @@ class ConvertAPIService {
         return api.convert(fromCurrency,toCurrency,amount)
     }
 
-    fun getConvertV2(): Single<ConvertJson>
-    {
-        return api.convertV2()
-    }
-    fun getConvertV3(fromCurrency:String?, toCurrency:String?, amount: Int?) : Single<ConvertJson>
-    {
-        return api.convertV3(fromCurrency,toCurrency,amount)
-    }
 }

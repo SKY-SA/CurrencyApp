@@ -31,5 +31,11 @@ class CurrencyLatestViewModel : ViewModel() {
         currencies.value = listCurrency
         isLoading.value = false
         isSuccess.value = true
+
+        globalList.addAll(listCurrency)
     }
+    companion object{
+        val globalList : ArrayList<CurrencyLatest> =  arrayListOf()
+    }
+
 }

@@ -6,6 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/background_screen"
         tools:context=".view.ConvertActivity">
 
         <TextView
@@ -66,10 +67,11 @@
             android:layout_marginTop="136dp"
             android:layout_marginEnd="58dp"
             android:layout_marginBottom="31dp"
+            android:background="#6666B9FB"
             app:layout_constraintBottom_toTopOf="@+id/convertActivity_ToSpinner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/convertActivity_FromTextView"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
             android:id="@+id/convertActivity_ToSpinner"
@@ -77,10 +79,11 @@
             android:layout_height="34dp"
             android:layout_marginEnd="58dp"
             android:layout_marginBottom="12dp"
+            android:background="#6666B9FB"
             app:layout_constraintBottom_toTopOf="@+id/convertActivity_AmountEditText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/convertActivity_ToTextView"
-            app:layout_constraintTop_toBottomOf="@+id/convertActivity_FromSpinner"/>
+            app:layout_constraintTop_toBottomOf="@+id/convertActivity_FromSpinner" />
 
         <EditText
             android:id="@+id/convertActivity_AmountEditText"
@@ -90,6 +93,7 @@
             android:layout_marginEnd="56dp"
             android:layout_marginBottom="53dp"
             android:ems="10"
+
             app:layout_constraintBottom_toTopOf="@+id/convertActivity_CalculationButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/convertActivity_AmountTextView"
@@ -100,12 +104,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="209dp"
+            android:onClick="onConvertButtonClicked"
             android:text="calculation"
+            android:textColorHighlight="#832424"
+            android:textColorLink="#770D0D"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/convertActivity_AmountEditText"
-            android:onClick="onConvertButtonClicked"/>
+            app:layout_constraintTop_toBottomOf="@+id/convertActivity_AmountEditText" />
+
+        <TextView
+            android:id="@+id/convertActivity_header"
+            android:layout_width="407dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:text="Converter"
+
+            android:gravity="center"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#C9772D2D"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

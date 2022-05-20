@@ -16,7 +16,7 @@ class FavoriteCurrenciesActivity : AppCompatActivity() {
 
     private var listFavoriteCurrencyName = ArrayList<String?>()
     private lateinit var viewModel : FavoriteViewModel
-    val recyclerAdapter = FavoriteRecyclerAdapter(arrayListOf())
+    private val recyclerAdapter = FavoriteRecyclerAdapter(arrayListOf())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +29,7 @@ class FavoriteCurrenciesActivity : AppCompatActivity() {
         }
 
         viewModel = ViewModelProvider(this).get(FavoriteViewModel::class.java)
-        viewModel.getData(listFavoriteCurrencyName,this,this)
+        viewModel.getData(listFavoriteCurrencyName)
 
         observeLiveData()
 
@@ -45,9 +45,5 @@ class FavoriteCurrenciesActivity : AppCompatActivity() {
                 recyclerAdapter.refreshData(it)
             }
         })
-    }
-    override fun onBackPressed() {
-        finish()
-        super.onBackPressed()
     }
 }

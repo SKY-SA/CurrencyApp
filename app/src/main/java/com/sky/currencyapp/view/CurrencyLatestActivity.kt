@@ -13,10 +13,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.sky.currencyapp.R
 import com.sky.currencyapp.adapter.CurrencyLatestRecyclerAdapter
+import com.sky.currencyapp.model.CurrencyLatest
 import com.sky.currencyapp.viewmodel.CurrencyLatestViewModel
 import kotlinx.android.synthetic.main.activity_currency_latest.*
 
 class CurrencyLatestActivity : AppCompatActivity() {
+
     private val recyclerAdapter = CurrencyLatestRecyclerAdapter(arrayListOf(), this)
     private lateinit var viewModel: CurrencyLatestViewModel
 
@@ -30,6 +32,9 @@ class CurrencyLatestActivity : AppCompatActivity() {
 
         currencyLatestActivity_recyclerView.layoutManager = LinearLayoutManager(this)
         currencyLatestActivity_recyclerView.adapter = recyclerAdapter
+
+
+
     }
 
     private fun observeLiveData()

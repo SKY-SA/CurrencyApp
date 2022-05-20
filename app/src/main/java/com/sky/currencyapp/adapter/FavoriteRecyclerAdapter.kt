@@ -23,6 +23,9 @@ class FavoriteRecyclerAdapter(private val list: ArrayList<CurrencyLatest>) : Rec
     override fun onBindViewHolder(holder: FavoriteCrHolder, position: Int) {
         holder.itemView.favoritesRecyclerRow_currencyNameTxt.text = list[position].fullName
         holder.itemView.favoriteRecyclerRow_currencyCodeTxt.text = list[position].code
+        holder.itemView.favoriteRecyclerRow_checkBox.isChecked=true
+        holder.itemView.favoriteRecyclerRow_checkBox.isClickable=false
+
     }
 
     override fun getItemCount(): Int {

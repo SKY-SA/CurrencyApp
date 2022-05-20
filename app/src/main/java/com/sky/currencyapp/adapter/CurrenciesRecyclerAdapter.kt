@@ -1,13 +1,17 @@
 package com.sky.currencyapp.adapter
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.graphics.red
+import androidx.core.graphics.toColorFilter
 import androidx.recyclerview.widget.RecyclerView
 import com.sky.currencyapp.R
 import com.sky.currencyapp.model.CurrencyDetails
 import kotlinx.android.synthetic.main.currencies_activity_recycler_row.view.*
+import kotlinx.android.synthetic.main.favorites_recycler_row.view.*
 import kotlin.collections.ArrayList
 
 class CurrenciesRecyclerAdapter(private val listCurrency: ArrayList<CurrencyDetails>) : RecyclerView.Adapter<CurrenciesRecyclerAdapter.CurrenciesHolder>() {
@@ -48,6 +52,7 @@ class CurrenciesRecyclerAdapter(private val listCurrency: ArrayList<CurrencyDeta
             else
             {
                 listCurrency[position].isFavorite = false
+
                 var index: Int = 0
                 index = listFavCurCode.indexOf(listCurrency[position].code)
 

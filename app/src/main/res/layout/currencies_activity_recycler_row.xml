@@ -48,9 +48,11 @@
             android:id="@+id/currenciesRecyclerRow_checkboxFavorite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Favorite"
+            android:layoutDirection="rtl"
+            android:paddingLeft="5dp"
             android:layout_weight="1"
             android:onClick="onCheckBoxClicked"
+            android:buttonTint="@color/black"
             />
 
 

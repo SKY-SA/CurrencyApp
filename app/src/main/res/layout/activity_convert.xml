@@ -3,132 +3,153 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_screen"
-        tools:context=".view.ConvertActivity">
+        tools:context=".view.ConvertActivity"
+        android:orientation="vertical"
+        android:weightSum="10">
 
-        <TextView
-            android:id="@+id/convertActivity_fromTextView"
-            android:layout_width="94dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="69dp"
-            android:layout_marginEnd="34dp"
-            android:layout_marginBottom="21dp"
-            android:gravity="end"
-            android:text="From"
-            android:textColor="#DAAA1212"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/convertActivity_toTextView"
-            app:layout_constraintEnd_toStartOf="@+id/convertActivity_fromSpinner"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/convertActivity_header" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
+            <TextView
+                android:id="@+id/convertActivity_header"
+                android:layout_width="593dp"
+                android:layout_height="177dp"
+                android:gravity="center"
+                android:text="Converter"
+                android:textColor="#C9772D2D"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="4dp" />
 
-        <TextView
-            android:id="@+id/convertActivity_toTextView"
-            android:layout_width="98dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="64dp"
-            android:layout_marginEnd="42dp"
-            android:layout_marginBottom="12dp"
-            android:gravity="end"
-            android:text="To"
-            android:textColor="#DAAA1212"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/convertActivity_amountTextView"
-            app:layout_constraintEnd_toStartOf="@+id/convertActivity_toSpinner"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/convertActivity_fromTextView" />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/convertActivity_amountTextView"
-            android:layout_width="97dp"
-            android:layout_height="37dp"
-            android:layout_marginStart="67dp"
-            android:layout_marginEnd="34dp"
-            android:layout_marginBottom="61dp"
-            android:text="Amount"
-            android:textColor="#DAAA1212"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/convertActivity_calculationButton"
-            app:layout_constraintEnd_toStartOf="@+id/convertActivity_amountEditText"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/convertActivity_toTextView" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:orientation="vertical"
+            android:weightSum="6">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="2">
+            <TextView
+                android:id="@+id/convertActivity_fromTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="end"
+                android:text="From"
+                android:textColor="#DAAA1212"
+                android:textSize="25dp"
+                android:textStyle="bold"
 
-        <Spinner
-            android:id="@+id/convertActivity_fromSpinner"
-            android:layout_width="0dp"
-            android:layout_height="39dp"
-            android:layout_marginEnd="51dp"
-            android:textDirection="rtl"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/convertActivity_fromTextView"
-            app:layout_constraintTop_toTopOf="@+id/convertActivity_fromTextView" />
+                android:layout_weight="1"
+                android:textDirection="rtl"
+                />
+            <Spinner
+                android:id="@+id/convertActivity_fromSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="65dp"
+                android:textDirection="rtl"
 
-        <Spinner
-            android:id="@+id/convertActivity_toSpinner"
-            android:layout_width="153dp"
-            android:layout_height="39dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="51dp"
-            android:layout_marginBottom="17dp"
-            android:textDirection="rtl"
-            app:layout_constraintBottom_toTopOf="@+id/convertActivity_amountEditText"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/convertActivity_toTextView"
-            app:layout_constraintTop_toBottomOf="@+id/convertActivity_fromSpinner" />
+                android:layout_weight="3"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="2">
+                <TextView
+                    android:id="@+id/convertActivity_toTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="end"
+                    android:text="To"
+                    android:textColor="#DAAA1212"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
 
+                    android:layout_weight="1"
+                    android:textDirection="rtl"/>
+                <Spinner
+                    android:id="@+id/convertActivity_toSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="65dp"
+                    android:textDirection="rtl"
+
+                    android:layout_weight="3" />
+            </LinearLayout>
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+                android:layout_weight="2">
+
+                <TextView
+                    android:id="@+id/convertActivity_amountTextView"
+                    android:layout_width="103dp"
+                    android:layout_height="50dp"
+                    android:text="Amount"
+                    android:textColor="#DAAA1212"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:textDirection="ltr"/>
+
+
+
+            <EditText
+                android:id="@+id/convertActivity_amountEditText"
+                android:layout_width="326dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:layout_weight="3"/>
+
+        </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="2">
         <Button
             android:id="@+id/convertActivity_calculationButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="210dp"
+            android:layout_width="304dp"
+            android:layout_height="67dp"
             android:onClick="onConvertButtonClicked"
             android:text="calculation"
             android:textColorHighlight="#832424"
             android:textColorLink="#770D0D"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/convertActivity_amountTextView" />
+            android:layout_gravity="center"
+            />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/convertActivity_header"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="2dp"
-
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginBottom="85dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Converter"
-            android:textColor="#C9772D2D"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/convertActivity_fromTextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/convertActivity_amountEditText"
-            android:layout_width="0dp"
-            android:layout_height="38dp"
-            android:layout_marginTop="54dp"
-            android:layout_marginEnd="51dp"
-            android:layout_marginBottom="57dp"
-            android:ems="10"
-            android:inputType="numberDecimal"
-            app:layout_constraintBottom_toTopOf="@+id/convertActivity_calculationButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/convertActivity_amountTextView"
-            app:layout_constraintTop_toTopOf="@+id/convertActivity_toTextView" />
+            android:layout_marginTop = "20dp"
+            android:layout_weight="2">
+        <TextView
+            android:id="@+id/convertActivity_resultsTxt"
+            android:layout_width="518dp"
+            android:layout_height="177dp"
+            android:hint="Result the Convert"
+            tools:layout_editor_absoluteX="41dp"
+            tools:layout_editor_absoluteY="630dp" />
+    </LinearLayout>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </layout>

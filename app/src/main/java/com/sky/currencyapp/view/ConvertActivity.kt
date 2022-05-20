@@ -91,6 +91,7 @@ class ConvertActivity : AppCompatActivity() {
                     if(meta.code == 200){
                         convertJsonIt.convertResponse?.let {
                             Toast.makeText(applicationContext, "Code is ${meta.code}\n Amount Tutarı ${it.amount} \nValue  Tutarı = ${it.value}", Toast.LENGTH_SHORT).show()
+
                         }
                     }
                     else{

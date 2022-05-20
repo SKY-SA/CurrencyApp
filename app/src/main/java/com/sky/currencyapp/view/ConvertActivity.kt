@@ -11,15 +11,15 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.sky.currencyapp.R
 import com.sky.currencyapp.viewmodel.CurrencyLatestViewModel
+import com.sky.currencyapp.viewmodel.CurrencyLatestViewModel.Companion.globalList
 import kotlinx.android.synthetic.main.activity_convert.*
-import kotlinx.android.synthetic.main.activity_currency_latest.*
+import kotlinx.android.synthetic.main.activity_currencies.view.*
 
 
 class ConvertActivity : AppCompatActivity() {
 
     private lateinit var viewModel : CurrencyLatestViewModel
-    var spinnerFrom: Spinner? = null
-    var spinnerTo: Spinner? = null
+
     var list = ArrayList<String?>()
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -27,27 +27,58 @@ class ConvertActivity : AppCompatActivity() {
         setContentView(R.layout.activity_convert)
 
 
-        viewModel = ViewModelProvider(this).get(CurrencyLatestViewModel::class.java)
-        viewModel.getData()
-        observeLiveData()
 
-        for(item in list){
-            println(item)
+
+        var fromCurrency: String? = ""
+        var toCurrency: String? = ""
+
+        list.clear()
+        for(item in globalList){
+            list.add(item.code!!.uppercase())
         }
-    }
+        var arr = list.toTypedArray()
 
-    private fun observeLiveData(){
-        viewModel.currencies.observe(this, Observer{ currencies->
+        if(convertActivity_fromSpinner != null && convertActivity_toSpinner != null){
+            val adapter = ArrayAdapter(this, com.bumptech.glide.R.layout.support_simple_spinner_dropdown_item,arr)
+            convertActivity_fromSpinner.adapter = adapter
+            convertActivity_toSpinner.adapter = adapter
 
-            currencies?.let {
-                for(item in it){
-                    list.add(item.code)
+            convertActivity_fromSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+                override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                     fromCurrency = arr[p2]!!.lowercase()
+                   // Toast.makeText(applicationContext, "Seçilen ${fromCurrency}", Toast.LENGTH_SHORT).show()
                 }
+
+                override fun onNothingSelected(p0: AdapterView<*>?) {
+                    Toast.makeText(applicationContext, "Please Choose the currency", Toast.LENGTH_SHORT).show()
+                }
+
             }
-        })
+        }
+        convertActivity_toSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                toCurrency = arr[p2]!!.lowercase()
+              //  Toast.makeText(applicationContext, "Seçilen ${toCurrency}", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                Toast.makeText(applicationContext, "Please Choose the currency", Toast.LENGTH_SHORT).show()
+            }
+
+        }
+
     }
+
+
     fun onConvertButtonClicked(view: View){
-        Toast.makeText(this, "Eklenecek", Toast.LENGTH_SHORT).show()
+        var amount: Double? = null
+        if(!convertActivity_amountEditText.text.isNullOrEmpty()){
+            amount = convertActivity_amountEditText.text.toString().toDouble()
+            println("Amount tutarı ${amount}")
+        }
+        else{
+            println("Tutar gelmedi")
+        }
     }
 
 }

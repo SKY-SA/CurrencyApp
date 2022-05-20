@@ -6,7 +6,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.CurrencyLatestActivity">
+    tools:context=".view.CurrencyLatestActivity"
+    android:background="@drawable/background_screen">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/currencyLatestActivity_recyclerView"

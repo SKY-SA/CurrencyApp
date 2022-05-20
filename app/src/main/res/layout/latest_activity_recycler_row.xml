@@ -30,7 +30,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:buttonTint="#173A04"
-            android:textColor="#355698"
+            android:textColor="#DAAA1212"
             android:layoutDirection="rtl"
             android:padding="6dp"
             android:layout_margin="3dp"

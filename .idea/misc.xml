@@ -13,13 +13,18 @@
         <entry key="..\:/Users/SKY/AndroidStudioProjects/CurrencyApp/app/src/main/res/layout/favorites_recycler_row.xml" value="0.358695652173913" />
         <entry key="..\:/Users/SKY/AndroidStudioProjects/CurrencyApp/app/src/main/res/layout/latest_activity_recycler_row.xml" value="0.33" />
         <entry key="..\:/Users/SKY/AndroidStudioProjects/CurrencyApp/app/src/main/res/menu/currencies_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/samet/AndroidStudioProjects/CurrencyApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2005" />
         <entry key="..\:/Users/samet/AndroidStudioProjects/CurrencyApp/app/src/main/res/drawable/background_screen.xml" value="0.201" />
         <entry key="..\:/Users/samet/AndroidStudioProjects/CurrencyApp/app/src/main/res/drawable/background_secreen.xml" value="0.201" />
+        <entry key="..\:/Users/samet/AndroidStudioProjects/CurrencyApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2005" />
         <entry key="..\:/Users/samet/AndroidStudioProjects/CurrencyApp/app/src/main/res/layout/activity_convert.xml" value="0.25" />
         <entry key="..\:/Users/samet/AndroidStudioProjects/CurrencyApp/app/src/main/res/layout/activity_currencies.xml" value="0.25" />
         <entry key="..\:/Users/samet/AndroidStudioProjects/CurrencyApp/app/src/main/res/layout/activity_currency_latest.xml" value="0.25" />
+        <entry key="..\:/Users/samet/AndroidStudioProjects/CurrencyApp/app/src/main/res/layout/activity_welcome.xml" value="0.1" />
+        <entry key="..\:/Users/samet/AndroidStudioProjects/CurrencyApp/app/src/main/res/layout/currencies_activity_recycler_row.xml" value="0.2105978260869565" />
         <entry key="..\:/Users/samet/AndroidStudioProjects/CurrencyApp/app/src/main/res/layout/favorites_recycler_row.xml" value="0.25" />
         <entry key="..\:/Users/samet/AndroidStudioProjects/CurrencyApp/app/src/main/res/layout/latest_activity_recycler_row.xml" value="0.25" />
+        <entry key="..\:/Users/samet/AndroidStudioProjects/CurrencyApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2005" />
       </map>
     </option>
   </component>
